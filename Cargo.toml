@@ -1,0 +1,50 @@
+[package]
+name = "winsvc"
+version = "0.1.0"
+authors = ["Nathan Jeffords <n8@n8ware.net>"]
+edition = "2018"
+
+[features]
+default=[
+    "async_main",
+    "serde_config",
+    #"std_cli",
+    "tracing_logfile"
+]
+async_main=["tokio"]
+serde_config=["serde"]
+std_cli=["structopt"]
+tracing_logfile=["tracing-subscriber"]
+
+[dependencies]
+tracing = "^0.1"
+serde = { version="^1", optional = true }
+tracing-subscriber = { version="0.2.18", optional=true }
+
+[dependencies.tokio]
+version="^1"
+features=[ "rt", "sync", "rt-multi-thread" ]
+optional=true
+
+[dependencies.structopt]
+git="https://github.com/TeXitoi/structopt.git"
+branch="master"
+optional=true
+
+[dependencies.winapi]
+version="*"
+features=[
+    "winsvc",
+    "synchapi",
+    "winerror",
+    "errhandlingapi",
+    "processthreadsapi",
+    "handleapi",
+    "winbase",
+    "psapi",
+    "winreg"
+]
+
+[dev-dependencies.serde]
+version="^1"
+features = [ "derive" ]
