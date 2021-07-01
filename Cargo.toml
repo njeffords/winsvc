@@ -8,13 +8,16 @@ edition = "2018"
 default=[
     "async_main",
     "serde_config",
-    #"std_cli",
+    "std_cli",
     "tracing_logfile"
 ]
 async_main=["tokio"]
 serde_config=["serde"]
 std_cli=["structopt"]
 tracing_logfile=["tracing-subscriber"]
+
+[[example]]
+name = "hello"
 
 [dependencies]
 tracing = "^0.1"
