@@ -1,6 +1,6 @@
 [package]
 name = "winsvc"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Nathan Jeffords <n8@n8ware.net>"]
 edition = "2018"
 
