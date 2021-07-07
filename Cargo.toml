@@ -30,8 +30,7 @@ features=[ "rt", "sync", "rt-multi-thread" ]
 optional=true
 
 [dependencies.structopt]
-git="https://github.com/TeXitoi/structopt.git"
-branch="master"
+version = "^0.3"
 optional=true
 
 [dependencies.winapi]
